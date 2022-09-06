@@ -1,0 +1,59 @@
+
+
+* {
+
+    --staxColor-scrollbar-border: rgb(230,230,230);
+    --staxColor-scrollbar: rgb(190,190,190);
+
+}
+
+.scrollbar-track-v {
+    position: absolute;
+    width: 6;
+    right: 0;
+    height: 100%;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.scrollbar-track-h {
+    position: absolute;
+    height: 6;
+    bottom: 0;
+    width: 100%;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.scrollbar-track-v:hover, .scrollbar-track-h:hover {
+    background-color: var(--staxColor-scrollbar-border);
+}
+
+
+.scrollbar-thumb-v {
+    position: relative;
+    display: block;
+    width: 100%;
+    background-color: var(--staxColor-scrollbar);
+    border-radius: 3px;
+    cursor: pointer;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.scrollbar-thumb-h {
+    position: relative;
+    display: block;
+    height: 100%;
+    background-color: var(--staxColor-scrollbar);
+    border-radius: 3px;
+    cursor: pointer;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.scrollbar-thumb-v:hover, .scrollbar-thumb-h:hover {
+    background-color: rgb(120,120,120);
+}

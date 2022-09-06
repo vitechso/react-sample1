@@ -1,0 +1,315 @@
+
+
+* {
+
+    --staxColor-stack-card-background: transparent;
+    --staxColor-hover-backdrop: rgb(246, 246, 246);
+
+    --staxColor-stack-path-name: #009ccc;
+
+}
+
+
+
+/* ------ Stack Viewer Header ------ */
+
+
+.stack-viewer-header {
+    padding-left: 20px;
+    padding-top: 20px;
+}
+
+.stack-viewer-header h1 {
+    float: left;
+    margin-top: 8px;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.stack-viewer-workingpath {
+
+    display: flex;
+    flex-direction: row;
+
+}
+
+.stack-viewer-workingpath h1 {
+    padding-left: 5px;
+    padding-right: 5px;
+
+    color: var(--staxColor-stack-path-name);
+    opacity: 0.5;
+    transition: ease-in-out 0.2s all;
+}
+.stack-viewer-workingpath h1:first-child {
+    padding-left: 0px !important;
+}
+
+
+.stack-path-link {
+
+    cursor: pointer;
+    font-size: 32px;
+
+}
+
+.stack-path-link h1 {
+    
+}
+
+
+.stack-path-link:hover {
+    opacity: 1;
+}
+
+
+.stack-viewer-backbutton {
+
+    cursor: pointer;
+    color: var(--staxColor-stack-path-name);
+    opacity: 0.5;
+    transition: ease-in-out 0.2s all;
+
+}
+
+.stack-viewer-backbutton:hover {
+    opacity: 1;
+}
+
+
+
+/* ------ Stack Viewer Body ------ */
+
+
+.stack-viewer-section {
+    position: relative;
+    clear: both;
+    padding-bottom: 10px;
+    margin-top: 10px;
+}
+
+
+.stacks-list {
+
+}
+
+.documents-list {
+
+}
+
+/* Forces stack-viewer-section to have full height of floated child-components */
+.stack-viewer-section::after {
+    content: " ";
+    display: block;
+    clear: both;
+    height: 0;
+}
+
+
+.stack-viewer-section h1 {
+    height: 64px;
+    line-height: 64px;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: 'Raleway', sans-serif;
+    padding-left: 24px;
+    overflow: hidden;
+}
+
+
+
+/* ------ Stack Cards ------ */
+
+.stack-card {
+    transition: all 0.1s ease-in-out;
+    cursor: pointer;
+}
+
+.stack-card * {
+    pointer-events: none;
+}
+
+.stack-card-grid {
+    display: block;
+    position: relative;
+    float: left;
+    width: 200px;
+    height: 141px;
+    border-radius: 10px;
+    margin: 0 20px 32px 20px;
+    padding: 45px 20px 16px 20px;
+    box-shadow: 2px 3px 20px -5px rgba(0,0,0,0.12);
+    background-color: var(--staxColor-stack-card-background);
+    background-position: 20px 20px;
+}
+
+
+.stack-card-grid:hover {
+    transform: scale(1.05);
+    box-shadow: 2px 3px 20px -3px rgba(0,0,0,0.12);
+}
+
+
+.stack-card-grid h1 {
+    height: 44px;
+    line-height: 44px;
+    font-weight: 500;
+    font-size: 14px;
+    padding: 0;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+
+.stack-card h2, .stack-card h3 {
+    font-weight: 400;
+    color: rgb(180,180,180);
+}
+
+.stack-card-grid h2, .stack-card-grid h3 {
+    height: 20px;
+    line-height: 20px;
+    font-size: 14px;
+}
+
+
+
+
+/* ------ Document Cards ------ */
+
+
+.document-card {
+    position: relative;
+    transition: all 0.15s ease-in-out;
+    cursor: pointer;
+}
+
+.document-card-grid {
+    width: 140px;
+    height: 186px;
+    float: left;
+    margin-left: 16px;
+    margin-bottom: 16px;
+    border-radius: 8px;
+    border: 2px solid transparent;
+}
+
+
+.document-card:hover {
+    background-color: var(--staxColor-hover-backdrop);
+}
+
+.document-card-grid:hover {
+    transform: scale(1.07);
+}
+
+
+.document-card-thumbnail {
+    position: relative;
+    filter: var(--filter-brightness);
+}
+
+.document-card-thumbnail-data {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+.document-card-grid .document-card-thumbnail {
+    position: absolute;
+    top: 20px;
+    left: 30px;
+    width: 80px;
+    height: 106px;
+    box-shadow: 2px 2px 10px -2px rgba(0,0,0,0.2);
+}
+
+
+.document-card-grid h1 {
+    position: absolute;
+    top: 138px;
+    left: 10px;
+    right: 10px;
+    height: 40px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    text-align: center;
+    padding: 0;
+}
+
+.document-card-grid h1 span {
+    line-height: 20px !important;
+}
+
+input.stax-viewer-search {
+  border: 1px solid #ddd !important;
+  border-radius: 20px !important;
+  min-height: 36px;
+}
+
+.autoresult ~ .input-group-prepend input.stax-viewer-search {
+  border-radius: 15px 15px 0 0 !important;
+}
+
+.stax-viewer-search {
+    z-index: 4000;
+}
+
+.stax-viewer-search-wrapper {
+    padding-left: 16px;
+    padding-top: 16px;
+    display: flex; 
+    flex-direction: row;
+    align-items: center;
+}
+
+.stax-viewer-searchbar-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.stax-viewer-search-icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 12px;
+    width: 15px;
+    height: 15px;
+}
+
+
+.search-total {
+
+    opacity: 0.5;
+
+    width: 100px;
+    text-align: center;
+    background-color: rgba(120, 120, 120, 1);
+    color: white;
+    border-radius: 18px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+
+    margin-left: 8px;
+
+}
+.search-total span {
+    width: 100%;
+    vertical-align: middle;
+}
